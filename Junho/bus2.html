@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>고준호 버스 경로 1</title>
+    <title>고준호 버스 경로 2</title>
     
 </head>
 <body>
-<div id="map" style="width:100%;height:800px;"></div>
+<div id="map" style="width:60%;height:800px;"></div>
 
 <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=469181da5df1adaac6f121b17c5dacf5"></script>
 <script>
@@ -26,7 +26,7 @@ var positions = [
     },
     {
         title: '버스정류장', 
-        latlng: new kakao.maps.LatLng(37.59097660522825, 127.09760631226)
+        latlng: new kakao.maps.LatLng(37.59415208324433 , 127.09925911290333)
     },
     {
         title: '학교', 
@@ -55,9 +55,11 @@ for (var i = 0; i < positions.length; i ++) {
 }
 
 var linePath = [
-    new kakao.maps.LatLng(37.606024037, 127.10093645),
-    new kakao.maps.LatLng(37.595441974767844, 127.10025456447411),
-    new kakao.maps.LatLng(37.59120767523137, 127.09772847047653),
+    new kakao.maps.LatLng(37.60591318058865 , 127.10083192263286),
+    new kakao.maps.LatLng(37.60239956582057 , 127.10054406919731),
+    new kakao.maps.LatLng(37.59574149842532 , 127.10024636260515),
+    new kakao.maps.LatLng(37.594084518488174 ,  127.09924769998203), 
+    new kakao.maps.LatLng(37.58677626719825 , 127.09524413454429)
     
 ];
 
@@ -70,11 +72,12 @@ var polyline = new kakao.maps.Polyline({
     strokeStyle: 'solid' // 선의 스타일입니다
 });
 var linePath = [
-    new kakao.maps.LatLng(37.59120767523137, 127.09772847047653),
-    new kakao.maps.LatLng(37.590528115330784, 127.09743064062675),
-    new kakao.maps.LatLng(37.59009993532751, 127.09871240586176),
-    new kakao.maps.LatLng(37.58893833136248, 127.09799926893507),
-    new kakao.maps.LatLng(37.58742502954333, 127.09747355598807),
+new kakao.maps.LatLng(37.58677626719825 , 127.09524413454429),
+new kakao.maps.LatLng(37.58633048161166 ,  127.09498882141636),
+new kakao.maps.LatLng(37.58618615420148 ,  127.09519809472121),
+new kakao.maps.LatLng(37.58652159762097 ,  127.09541647108752),
+new kakao.maps.LatLng(37.58599328834945 ,  127.09692444720045)
+    
     
     
 ];
