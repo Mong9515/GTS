@@ -106,20 +106,7 @@ var linePath = [
     new kakao.maps.LatLng(37.513650705547626, 127.10132411732076),
     new kakao.maps.LatLng(37.517442765081924, 127.11256165195235),
     new kakao.maps.LatLng(37.53048134811131, 127.12059124094709),
-    new kakao.maps.LatLng(37.538623454843126, 127.12343304858236),
-    new kakao.maps.LatLng(37.53940014499461, 127.12166920397688),
-    new kakao.maps.LatLng(37.54136726953831, 127.1187757090581),
-    new kakao.maps.LatLng(37.544910779561135, 127.10662822907274),
-    new kakao.maps.LatLng(37.54502056045255, 127.10477260170204),
-    new kakao.maps.LatLng(37.549680801213995, 127.09142570215008),
-    new kakao.maps.LatLng(37.55310647484599, 127.08896278547965),
-    new kakao.maps.LatLng(37.55386402464031, 127.08801305017097),
-    new kakao.maps.LatLng(37.557203795390635, 127.07943823855145),
-    new kakao.maps.LatLng(37.569002220489054, 127.08603864825271),
-    new kakao.maps.LatLng(37.57290342652613, 127.08617897580635),
-    new kakao.maps.LatLng(37.57429913516214, 127.08731260262942),
-    new kakao.maps.LatLng(37.58080343783844, 127.08848627824214)
-
+    new kakao.maps.LatLng(37.538623454843126, 127.12343304858236)
 ];
 
 // 지도에 표시할 선을 생성합니다
@@ -131,28 +118,9 @@ var polyline1 = new kakao.maps.Polyline({
     strokeStyle: 'solid' // 선의 스타일입니다
 });
 
-var linePath = [
-    new kakao.maps.LatLng(37.58080343783844, 127.08848627824214),
-    new kakao.maps.LatLng(37.580692746360455, 127.09304382801169),
-    new kakao.maps.LatLng(37.58370258855997, 127.09358026970719),
-    new kakao.maps.LatLng(37.58795317697858, 127.09599458715411),
-    new kakao.maps.LatLng(37.58734044629448, 127.09765917423582),
-    new kakao.maps.LatLng(37.58675290966264, 127.09767932510779)
-];
-
-// 지도에 표시할 선을 생성합니다
-var polyline2 = new kakao.maps.Polyline({
-    path: linePath, // 선을 구성하는 좌표배열 입니다
-    strokeWeight: 5, // 선의 두께 입니다
-    strokeColor: '#121212', // 선의 색깔입니다
-    strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-    strokeStyle: 'solid' // 선의 스타일입니다
-});
-
 // 지도에 선을 표시합니다 
 polyline.setMap(map);
-polyline1.setMap(map);
-polyline2.setMap(map);
+polyline1.setMap(map); 
 
 </script>
 </body>
