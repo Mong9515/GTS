@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>지도 생성하기</title>
+
+</head>
+<body>
+<!-- 지도를 표시할 div 입니다 -->
+<div id="map" style="width:100%;height:350px;"></div>
+
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=469181da5df1adaac6f121b17c5dacf5"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.451673396487266, 127.15637002836185), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 마커를 표시할 위치와 title 객체 배열입니다 
+var positions = [
+    {
+        title: '서일대학교', 
+        latlng: new kakao.maps.LatLng(37.58675290966264, 127.09767932510779)
+    },
+    {
+        title: '재현집', 
+        latlng: new kakao.maps.LatLng(37.61772631535036, 127.04801856116465)
+    },
+    {
+        title: '채림집', 
+        latlng: new kakao.maps.LatLng(37.572060634190905, 127.05155783064035)
+    },
+    {
+        title: '준호집',
+        latlng: new kakao.maps.LatLng(37.605004411343415, 127.10123715548546)
+    },
+    {
+        title: '수현집',
+        latlng: new kakao.maps.LatLng(37.451673396487266, 127.15637002836185)
+    }
+];
+
+// 마커 이미지의 이미지 주소입니다
+var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+
+for (var i = 0; i < positions.length; i ++) {
+
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(24, 35); 
+
+    // 마커 이미지를 생성합니다    
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng, // 마커를 표시할 위치
+        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        image : markerImage // 마커 이미지 
+    });
+}
+
+var linePath = [
+    new kakao.maps.LatLng(37.451673396487266, 127.15637002836185),
+    new kakao.maps.LatLng(37.450849263343784, 127.15952144449751)
+];
+
+// 지도에 표시할 선을 생성합니다
+var polyline = new kakao.maps.Polyline({
+    path: linePath, // 선을 구성하는 좌표배열 입니다
+    strokeWeight: 5, // 선의 두께 입니다
+    strokeColor: '#121212', // 선의 색깔입니다
+    strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    strokeStyle: 'solid' // 선의 스타일입니다
+});
+
+var linePath = [
+    new kakao.maps.LatLng(37.450849263343784, 127.15952144449751),
+    new kakao.maps.LatLng(37.45402778967792, 127.16103136418288),
+    new kakao.maps.LatLng(37.460849314359535, 127.1669009719458),
+    new kakao.maps.LatLng(37.463691531306544, 127.17038876086603),
+    new kakao.maps.LatLng(37.46403631451921, 127.16871662082573),
+    new kakao.maps.LatLng(37.46351699967129, 127.16640954965457),
+    new kakao.maps.LatLng(37.46254641243177, 127.16462147619382),
+    new kakao.maps.LatLng(37.46254776259101, 127.16364939476352),
+    new kakao.maps.LatLng(37.46327333905792, 127.16016952388665),
+    new kakao.maps.LatLng(37.46316680554421, 127.15899374295985),
+    new kakao.maps.LatLng(37.46178721912225, 127.15295491644366),
+    new kakao.maps.LatLng(37.46103148044188, 127.1520943429624),
+    new kakao.maps.LatLng(37.45858096832126, 127.15190853650766),
+    new kakao.maps.LatLng(37.457015134612156, 127.15040213997561),
+    new kakao.maps.LatLng(37.45694374303678, 127.14985947866829),
+    new kakao.maps.LatLng(37.45712466022211, 127.14929471503582),
+    new kakao.maps.LatLng(37.459217047171535, 127.14767127034916),
+    new kakao.maps.LatLng(37.463659487682506, 127.13989191128363),
+    new kakao.maps.LatLng(37.46645979882733, 127.13369128811186),
+    new kakao.maps.LatLng(37.46694698164992, 127.13312695699229),
+    new kakao.maps.LatLng(37.46853339224648, 127.13256455956625),
+    new kakao.maps.LatLng(37.47028308837235, 127.13100763172163),
+    new kakao.maps.LatLng(37.470906862057994, 127.12912085716782),
+    new kakao.maps.LatLng(37.470873404074716, 127.12673553635696)
+
+
+];
+
+// 지도에 표시할 선을 생성합니다
+var polyline1 = new kakao.maps.Polyline({
+    path: linePath, // 선을 구성하는 좌표배열 입니다
+    strokeWeight: 5, // 선의 두께 입니다
+    strokeColor: '#0D20EB', // 선의 색깔입니다
+    strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    strokeStyle: 'solid' // 선의 스타일입니다
+});
+
+// 지도에 선을 표시합니다 
+polyline.setMap(map);
+polyline1.setMap(map);
+
+
+</script>
+</body>
+</html>
